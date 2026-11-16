@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stuur je cv · Heupers Werving & Selectie</title>
+<meta name="description" content="Stuur je cv naar Heupers Werving & Selectie. Solliciteer op een vacature of open, dan nemen we persoonlijk contact met je op.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="assets/site.js"></script>
+<script src="assets/data.js"></script>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="font-sans" data-page="cv">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:text-ink">Naar de inhoud</a>
+
+<script>site.header()</script>
+
+<main id="main">
+
+<!-- ============ PAGINAKOP ============ -->
+<section class="relative isolate overflow-hidden bg-ink text-white">
+  <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2000&q=75" alt=""
+       class="hero-img absolute inset-0 -z-20 h-full w-full object-cover">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink/95 via-ink/80 to-ink/40"></div>
+  <div class="mx-auto max-w-site px-5 pb-16 pt-36 sm:px-8 sm:pb-20 sm:pt-48">
+    <nav aria-label="Kruimelpad" class="rise eyebrow text-white/60">
+      <a href="index.html" class="hover:text-white">Home</a><span class="mx-2 text-accent">/</span><span aria-current="page" class="text-white/90">Stuur je cv</span>
+    </nav>
+    <h1 class="rise mt-6 max-w-3xl font-display text-[2.4rem] font-light leading-[1.08] sm:text-6xl" style="animation-delay:.1s">Stuur je cv.</h1>
+    <p class="rise mt-6 max-w-2xl text-lg leading-relaxed text-white/85" style="animation-delay:.2s">Solliciteer op een vacature of stuur je cv open in. Wij nemen persoonlijk contact met je op voor een eerste kennismaking.</p>
+  </div>
+</section>
+
+<!-- ============ FORMULIER ============ -->
+<section class="bg-paper py-16 sm:py-24" aria-label="Sollicitatieformulier">
+  <div class="mx-auto grid max-w-site gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16">
+
+    <div class="reveal bg-white p-6 sm:p-10 lg:col-span-7">
+      <form id="cv-form" class="grid gap-6" novalidate>
+        <div>
+          <h2 class="font-display text-3xl font-light leading-tight">Jouw gegevens</h2>
+          <p class="mt-2 text-sm text-muted">Velden met * zijn verplicht. Je gegevens worden vertrouwelijk behandeld.</p>
+        </div>
+
+        <div class="field">
+          <label for="vacature">Ik solliciteer op</label>
+          <select id="vacature" name="vacature" class="input"></select>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div class="field">
+            <label for="voornaam">Voornaam *</label>
+            <input id="voornaam" name="voornaam" class="input" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="achternaam">Achternaam *</label>
+            <input id="achternaam" name="achternaam" class="input" autocomplete="family-name" required>
+          </div>
+          <div class="field">
+            <label for="email">E-mailadres *</label>
+            <input id="email" name="email" type="email" class="input" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="tel">Telefoonnummer *</label>
+            <input id="tel" name="tel" type="tel" class="input" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="woonplaats">Woonplaats <span class="hint">(optioneel)</span></label>
+            <input id="woonplaats" name="woonplaats" class="input" autocomplete="address-level2">
+          </div>
+          <div class="field">
+            <label for="linkedin">LinkedIn-profiel <span class="hint">(optioneel)</span></label>
+            <input id="linkedin" name="linkedin" type="url" class="input" placeholder="https://linkedin.com/in/…" autocomplete="url">
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="label" id="cv-label">Je cv *</span>
+          <div class="drop flex flex-col items-center justify-center gap-3 px-6 py-10 text-center" id="drop">
+            <input id="cv" name="cv" type="file" accept=".pdf,.doc,.docx" required aria-labelledby="cv-label" aria-describedby="cv-hint">
+            <svg class="h-9 w-9 text-accent-deep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M14 3.5H7a1.5 1.5 0 0 0-1.5 1.5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8L14 3.5Z"/><path d="M14 3.5V8h4.5M12 17v-6m-2.5 2.5L12 11l2.5 2.5"/></svg>
+            <p id="cv-text" class="font-display text-lg"><span class="underline decoration-accent decoration-2 underline-offset-4">Kies een bestand</span> of sleep het hierheen</p>
+            <p id="cv-hint" class="text-sm text-muted">PDF of Word, maximaal 5 MB</p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="motivatie">Toelichting <span class="hint">(optioneel)</span></label>
+          <textarea id="motivatie" name="motivatie" class="input" placeholder="Wat zoek je in je volgende stap? Een paar zinnen is genoeg."></textarea>
+        </div>
+
+        <label class="check">
+          <input type="checkbox" name="privacy" required>
+          <span>Ik ga akkoord met de verwerking van mijn gegevens volgens de <a href="#" class="text-ink underline underline-offset-2">privacyverklaring</a>. Heupers bewaart mijn cv maximaal 12 maanden. *</span>
+        </label>
+
+        <button type="submit" class="group inline-flex items-center justify-center gap-3 self-start bg-accent px-7 py-4 font-display text-[13px] font-medium uppercase tracking-[.16em] text-ink transition hover:bg-accent-soft">
+          Verstuur mijn cv
+          <svg class="h-4 w-4 transition group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
+        </button>
+      </form>
+
+      <div id="cv-done" class="py-10 text-center outline-none" tabindex="-1" hidden>
+        <span class="mx-auto grid h-14 w-14 place-items-center rounded-full bg-accent text-ink">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+        </span>
+        <h2 class="mt-6 font-display text-3xl font-light">Bedankt, we hebben je cv ontvangen.</h2>
+        <p class="mx-auto mt-3 max-w-md text-muted">We bekijken je cv persoonlijk en bellen je binnen een paar werkdagen voor een eerste kennismaking.</p>
+        <a href="vacatures.html" class="mt-8 inline-flex items-center gap-3 border border-ink px-6 py-3.5 font-display text-[13px] font-medium uppercase tracking-[.16em] transition hover:bg-ink hover:text-white">Bekijk meer vacatures</a>
+      </div>
+    </div>
+
+    <!-- Wat gebeurt er hierna -->
+    <aside class="lg:col-span-5" aria-labelledby="next-title">
+      <div class="lg:sticky lg:top-28">
+        <h2 id="next-title" class="reveal font-display text-3xl font-light leading-tight sm:text-4xl">Wat gebeurt er hierna?</h2>
+        <ol class="reveal mt-8 border-l border-stone">
+          <li class="relative pb-8 pl-8">
+            <span class="absolute -left-[13px] top-0 grid h-[26px] w-[26px] place-items-center bg-ink font-display text-xs text-white">1</span>
+            <h3 class="font-display text-xl">We lezen je cv persoonlijk</h3>
+            <p class="mt-2 leading-relaxed text-muted">Geen systeem dat filtert: iemand van de familie Heupers bekijkt je gegevens.</p>
+          </li>
+          <li class="relative pb-8 pl-8">
+            <span class="absolute -left-[13px] top-0 grid h-[26px] w-[26px] place-items-center bg-ink font-display text-xs text-white">2</span>
+            <h3 class="font-display text-xl">Telefonische kennismaking</h3>
+            <p class="mt-2 leading-relaxed text-muted">We bespreken je achtergrond en ambities en kijken of er een wederzijdse klik is.</p>
+          </li>
+          <li class="relative pl-8">
+            <span class="absolute -left-[13px] top-0 grid h-[26px] w-[26px] place-items-center bg-accent font-display text-xs text-ink">3</span>
+            <h3 class="font-display text-xl">Een kop koffie</h3>
+            <p class="mt-2 leading-relaxed text-muted">We nemen de tijd om je écht te leren kennen, zodat we je kunnen verbinden met een organisatie die bij je past.</p>
+          </li>
+        </ol>
+        <div class="reveal mt-10 hidden border-t border-stone pt-8 lg:block">
+          <p class="text-sm text-muted">Liever eerst even bellen?</p>
+          <a href="tel:+31639890060" class="mt-2 inline-flex items-center gap-2 font-display text-xl transition hover:text-accent-deep">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            Jens Heupers · 06 3989 0060
+          </a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<script>site.footer()</script>
+
+<script>
+/* Vacature-keuze: open sollicitatie + alle vacatures; voorgeselecteerd via ?vacature= */
+const select = document.getElementById('vacature');
+const gekozen = new URLSearchParams(location.search).get('vacature');
+select.innerHTML = '<option value="">Open sollicitatie</option>' +
+  VACATURES.map(v => `<option${v.titel === gekozen ? ' selected' : ''}>${site.esc(v.titel)}</option>`).join('');
+
+/* Cv-upload: bestandsnaam tonen, sleep-status, max 5 MB */
+const drop = document.getElementById('drop');
+const cv = document.getElementById('cv');
+const cvText = document.getElementById('cv-text');
+const cvTextDefault = cvText.innerHTML;
+['dragenter', 'dragover'].forEach(t => drop.addEventListener(t, () => drop.classList.add('is-over')));
+['dragleave', 'drop'].forEach(t => drop.addEventListener(t, () => drop.classList.remove('is-over')));
+cv.addEventListener('change', () => {
+  const f = cv.files[0];
+  cv.setCustomValidity(f && f.size > 5 * 1024 * 1024 ? 'Je cv is groter dan 5 MB.' : '');
+  cvText.innerHTML = f ? `<span class="font-medium">${site.esc(f.name)}</span> <span class="text-sm text-muted">· wijzigen</span>` : cvTextDefault;
+});
+
+site.demoForm(document.getElementById('cv-form'), document.getElementById('cv-done'));
+</script>
+</body>
+</html>

@@ -1,4 +1,52 @@
 {
   "version": 1,
-  "bugs": []
+  "bugs": [
+    {
+      "id": "bug-001",
+      "timestamp": "2026-11-16T13:50:00",
+      "error_message": "Vacature counts in nav/filter empty on all pages",
+      "file": "app/designs/assets/site.js",
+      "root_cause": "Checked window.VACATURES, but top-level const is not a window property",
+      "fix": "typeof VACATURES !== 'undefined'",
+      "tags": [
+        "javascript",
+        "globals",
+        "const"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-16T13:50:00"
+    },
+    {
+      "id": "bug-002",
+      "timestamp": "2026-11-16T14:20:00",
+      "error_message": "'Vacatures' shown as active menu item on every page",
+      "file": "app/designs/assets/site.js",
+      "root_cause": "Dropdown items without a page key compared undefined === undefined when body had no data-sub",
+      "fix": "Guard it.page && it.page === sub; default sub to null",
+      "tags": [
+        "nav",
+        "active-state"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-16T14:20:00"
+    },
+    {
+      "id": "bug-003",
+      "timestamp": "2026-11-16T14:35:00",
+      "error_message": "Mobile apply bar covered the open mobile menu on vacature page",
+      "file": "app/designs/assets/site.css",
+      "root_cause": "Fixed bottom bar stays visible above the menu",
+      "fix": "body:has(#menu-btn[aria-expanded=true]) .hide-on-menu { display:none }",
+      "tags": [
+        "mobile",
+        "css",
+        "fixed"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-16T14:35:00"
+    }
+  ]
 }

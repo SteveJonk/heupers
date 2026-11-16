@@ -3,18 +3,18 @@
   "created_at": "2026-11-10T13:56:04.179Z",
   "lifetime": {
     "total_tokens_estimated": 0,
-    "total_reads": 5,
+    "total_reads": 17,
     "total_writes": 0,
     "total_sessions": 1,
     "anatomy_hits": 0,
-    "anatomy_misses": 5,
+    "anatomy_misses": 17,
     "repeated_reads_blocked": 0,
     "estimated_savings_vs_bare_cli": 0,
-    "real_input_tokens": 258,
-    "real_output_tokens": 81744,
-    "real_cache_read_tokens": 13837882,
-    "real_cache_creation_tokens": 459648,
-    "real_api_calls": 119
+    "real_input_tokens": 992,
+    "real_output_tokens": 467562,
+    "real_cache_read_tokens": 83987118,
+    "real_cache_creation_tokens": 1448438,
+    "real_api_calls": 460
   },
   "sessions": [
     {
@@ -165,6 +165,174 @@
         "cache_read_input_tokens": 4026337,
         "cache_creation_input_tokens": 96677,
         "api_calls": 33
+      }
+    },
+    {
+      "id": "session-2026-11-16-1317",
+      "agent": "claude",
+      "started": "2026-11-16T12:17:47.085Z",
+      "ended": "2026-11-16T12:41:23.394Z",
+      "reads": [
+        {
+          "file": "/Users/stevejonk/.claude/projects/-Users-stevejonk-Documents-Prive-Projecten-heupers/8d4fcd5e-88ee-495f-97a8-ab5d6b20d67d/tool-results/b0dg35s5l.txt",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/stevejonk/Downloads/Over Heupers Werving.docx.pdf",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/private/tmp/claude-501/-Users-stevejonk--claude-spares-spare-sCZqks/8d4fcd5e-88ee-495f-97a8-ab5d6b20d67d/scratchpad/client.txt",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [],
+      "totals": {
+        "input_tokens_estimated": 0,
+        "output_tokens_estimated": 0,
+        "reads_count": 3,
+        "writes_count": 0,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 0
+      },
+      "real_usage": {
+        "input_tokens": 92,
+        "output_tokens": 24575,
+        "cache_read_input_tokens": 5242405,
+        "cache_creation_input_tokens": 132033,
+        "api_calls": 41
+      }
+    },
+    {
+      "id": "session-2026-11-16-1317",
+      "agent": "claude",
+      "started": "2026-11-16T12:17:47.085Z",
+      "ended": "2026-11-16T12:58:36.010Z",
+      "reads": [
+        {
+          "file": "/Users/stevejonk/.claude/projects/-Users-stevejonk-Documents-Prive-Projecten-heupers/8d4fcd5e-88ee-495f-97a8-ab5d6b20d67d/tool-results/b0dg35s5l.txt",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/stevejonk/Downloads/Over Heupers Werving.docx.pdf",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/private/tmp/claude-501/-Users-stevejonk--claude-spares-spare-sCZqks/8d4fcd5e-88ee-495f-97a8-ab5d6b20d67d/scratchpad/client.txt",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [],
+      "totals": {
+        "input_tokens_estimated": 0,
+        "output_tokens_estimated": 0,
+        "reads_count": 3,
+        "writes_count": 0,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 0
+      },
+      "real_usage": {
+        "input_tokens": 200,
+        "output_tokens": 115905,
+        "cache_read_input_tokens": 19651932,
+        "cache_creation_input_tokens": 277125,
+        "api_calls": 94
+      }
+    },
+    {
+      "id": "session-2026-11-16-1317",
+      "agent": "claude",
+      "started": "2026-11-16T12:17:47.085Z",
+      "ended": "2026-11-16T12:59:32.424Z",
+      "reads": [
+        {
+          "file": "/Users/stevejonk/.claude/projects/-Users-stevejonk-Documents-Prive-Projecten-heupers/8d4fcd5e-88ee-495f-97a8-ab5d6b20d67d/tool-results/b0dg35s5l.txt",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/stevejonk/Downloads/Over Heupers Werving.docx.pdf",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/private/tmp/claude-501/-Users-stevejonk--claude-spares-spare-sCZqks/8d4fcd5e-88ee-495f-97a8-ab5d6b20d67d/scratchpad/client.txt",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [],
+      "totals": {
+        "input_tokens_estimated": 0,
+        "output_tokens_estimated": 0,
+        "reads_count": 3,
+        "writes_count": 0,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 0
+      },
+      "real_usage": {
+        "input_tokens": 212,
+        "output_tokens": 118924,
+        "cache_read_input_tokens": 21285036,
+        "cache_creation_input_tokens": 284639,
+        "api_calls": 99
+      }
+    },
+    {
+      "id": "session-2026-11-16-1317",
+      "agent": "claude",
+      "started": "2026-11-16T12:17:47.085Z",
+      "ended": "2026-11-16T13:31:21.210Z",
+      "reads": [
+        {
+          "file": "/Users/stevejonk/.claude/projects/-Users-stevejonk-Documents-Prive-Projecten-heupers/8d4fcd5e-88ee-495f-97a8-ab5d6b20d67d/tool-results/b0dg35s5l.txt",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/stevejonk/Downloads/Over Heupers Werving.docx.pdf",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/private/tmp/claude-501/-Users-stevejonk--claude-spares-spare-sCZqks/8d4fcd5e-88ee-495f-97a8-ab5d6b20d67d/scratchpad/client.txt",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [],
+      "totals": {
+        "input_tokens_estimated": 0,
+        "output_tokens_estimated": 0,
+        "reads_count": 3,
+        "writes_count": 0,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 0
+      },
+      "real_usage": {
+        "input_tokens": 230,
+        "output_tokens": 126414,
+        "cache_read_input_tokens": 23969863,
+        "cache_creation_input_tokens": 294993,
+        "api_calls": 107
       }
     }
   ],

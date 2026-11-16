@@ -1,0 +1,98 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "app/designs/index.html"
+        ],
+        "createdAt": "2026-11-16T12:59:20.122Z",
+        "reason": "Claude: static scan cannot see Tailwind CDN classes; rendered impeccable detect on localhost reports no such issue (h1 up to 60px vs 16px body)"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "app/designs/over-ons.html"
+        ],
+        "createdAt": "2026-11-16T12:59:20.148Z",
+        "reason": "Claude: static scan cannot see Tailwind CDN classes; rendered impeccable detect on localhost reports no such issue (h1 up to 60px vs 16px body)"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "app/designs/werkwijze.html"
+        ],
+        "createdAt": "2026-11-16T12:59:20.177Z",
+        "reason": "Claude: static scan cannot see Tailwind CDN classes; rendered impeccable detect on localhost reports no such issue (h1 up to 60px vs 16px body)"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "app/designs/opdrachtgevers.html"
+        ],
+        "createdAt": "2026-11-16T12:59:20.201Z",
+        "reason": "Claude: static scan cannot see Tailwind CDN classes; rendered impeccable detect on localhost reports no such issue (h1 up to 60px vs 16px body)"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "app/designs/vacatures.html"
+        ],
+        "createdAt": "2026-11-16T12:59:20.225Z",
+        "reason": "Claude: static scan cannot see Tailwind CDN classes; rendered impeccable detect on localhost reports no such issue (h1 up to 60px vs 16px body)"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "app/designs/vacature.html"
+        ],
+        "createdAt": "2026-11-16T12:59:20.266Z",
+        "reason": "Claude: static scan cannot see Tailwind CDN classes; rendered impeccable detect on localhost reports no such issue (h1 up to 60px vs 16px body)"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "app/designs/contact.html"
+        ],
+        "createdAt": "2026-11-16T12:59:20.291Z",
+        "reason": "Claude: static scan cannot see Tailwind CDN classes; rendered impeccable detect on localhost reports no such issue (h1 up to 60px vs 16px body)"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "app/designs/stuur-je-cv.html"
+        ],
+        "createdAt": "2026-11-16T12:59:20.314Z",
+        "reason": "Claude: static scan cannot see Tailwind CDN classes; rendered impeccable detect on localhost reports no such issue (h1 up to 60px vs 16px body)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "app/designs/contact.html"
+        ],
+        "createdAt": "2026-11-16T12:59:20.339Z",
+        "reason": "Claude: static-scan false positive; rendered detect on localhost reports no cramped padding (inputs 16px inset)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "app/designs/stuur-je-cv.html"
+        ],
+        "createdAt": "2026-11-16T12:59:20.362Z",
+        "reason": "Claude: static-scan false positive; rendered detect on localhost reports no cramped padding (inputs 16px inset)"
+      }
+    ]
+  }
+}

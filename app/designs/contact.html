@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact · Heupers Werving & Selectie</title>
+<meta name="description" content="Neem contact op met Heupers Werving & Selectie. Bel Jens of Marc Heupers, mail naar info@heupers.nl of stuur ons een bericht.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="assets/site.js"></script>
+<script src="assets/data.js"></script>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="font-sans" data-page="contact">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:text-ink">Naar de inhoud</a>
+
+<script>site.header()</script>
+
+<main id="main">
+
+<!-- ============ PAGINAKOP ============ -->
+<section class="relative isolate overflow-hidden bg-ink text-white">
+  <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2000&q=75" alt=""
+       class="hero-img absolute inset-0 -z-20 h-full w-full object-cover">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink/95 via-ink/80 to-ink/40"></div>
+  <div class="mx-auto max-w-site px-5 pb-16 pt-36 sm:px-8 sm:pb-20 sm:pt-48">
+    <nav aria-label="Kruimelpad" class="rise eyebrow text-white/60">
+      <a href="index.html" class="hover:text-white">Home</a><span class="mx-2 text-accent">/</span><span aria-current="page" class="text-white/90">Contact</span>
+    </nav>
+    <h1 class="rise mt-6 max-w-3xl font-display text-[2.4rem] font-light leading-[1.08] sm:text-6xl" style="animation-delay:.1s">Laten we kennismaken.</h1>
+    <p class="rise mt-6 max-w-2xl text-lg leading-relaxed text-white/85" style="animation-delay:.2s">Bel ons, stuur een mail of laat een bericht achter. Wij nemen altijd persoonlijk contact met je op.</p>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="bg-paper py-16 sm:py-24" aria-label="Contactgegevens en formulier">
+  <div class="mx-auto grid max-w-site gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16">
+
+    <!-- Gegevens -->
+    <div class="lg:col-span-5">
+      <h2 class="reveal font-display text-3xl font-light leading-tight sm:text-4xl">Direct contact</h2>
+      <p class="reveal mt-4 max-w-md leading-relaxed text-muted">Je spreekt altijd met iemand van de familie Heupers. Bellen mag altijd, ook voor een vrijblijvend gesprek.</p>
+
+      <ul id="people" class="mt-10 grid gap-4"></ul>
+
+      <dl class="reveal mt-10 grid gap-6 border-t border-stone pt-8 text-sm sm:grid-cols-2 lg:grid-cols-1">
+        <div>
+          <dt class="eyebrow text-muted">E-mail</dt>
+          <dd class="mt-2"><a href="mailto:info@heupers.nl" class="font-display text-lg underline decoration-stone underline-offset-4 transition hover:decoration-ink">info@heupers.nl</a></dd>
+        </div>
+        <div>
+          <dt class="eyebrow text-muted">Adres</dt>
+          <dd class="mt-2 font-display text-lg leading-snug">Voorbeeldstraat 12<br>1234 AB Plaatsnaam</dd>
+        </div>
+        <div>
+          <dt class="eyebrow text-muted">Volg ons</dt>
+          <dd class="mt-2"><a href="#" class="inline-flex items-center gap-2 font-display text-lg transition hover:text-accent-deep"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm6.5 0h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4V9.5Z"/></svg>LinkedIn</a></dd>
+        </div>
+      </dl>
+    </div>
+
+    <!-- Formulier -->
+    <div class="reveal bg-white p-6 sm:p-10 lg:col-span-7">
+      <form id="contact-form" class="grid gap-6" novalidate>
+        <div>
+          <h2 class="font-display text-3xl font-light leading-tight">Stuur ons een bericht</h2>
+          <p class="mt-2 text-sm text-muted">Velden met * zijn verplicht. We reageren binnen één werkdag.</p>
+        </div>
+
+        <fieldset class="field">
+          <legend class="label mb-2 text-sm font-medium">Ik ben</legend>
+          <div class="seg">
+            <label><input type="radio" name="rol" value="kandidaat" checked> Kandidaat</label>
+            <label><input type="radio" name="rol" value="opdrachtgever"> Opdrachtgever</label>
+          </div>
+        </fieldset>
+
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div class="field">
+            <label for="naam">Naam *</label>
+            <input id="naam" name="naam" class="input" autocomplete="name" required>
+          </div>
+          <div class="field" id="bedrijf-field" hidden>
+            <label for="bedrijf">Organisatie *</label>
+            <input id="bedrijf" name="bedrijf" class="input" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="email">E-mailadres *</label>
+            <input id="email" name="email" type="email" class="input" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="tel">Telefoonnummer <span class="hint">(optioneel)</span></label>
+            <input id="tel" name="tel" type="tel" class="input" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="bericht">Bericht *</label>
+          <textarea id="bericht" name="bericht" class="input" required placeholder="Waar kunnen wij je mee helpen?"></textarea>
+        </div>
+
+        <label class="check">
+          <input type="checkbox" name="privacy" required>
+          <span>Ik ga akkoord met de verwerking van mijn gegevens volgens de <a href="#" class="text-ink underline underline-offset-2">privacyverklaring</a>. *</span>
+        </label>
+
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <button type="submit" class="group inline-flex items-center justify-center gap-3 bg-ink px-7 py-4 font-display text-[13px] font-medium uppercase tracking-[.16em] text-white transition hover:bg-ink/85">
+            Verstuur bericht
+            <svg class="h-4 w-4 transition group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
+          </button>
+          <a href="stuur-je-cv.html" class="text-sm text-muted underline decoration-stone underline-offset-4 transition hover:text-ink hover:decoration-ink">Wil je solliciteren? Stuur je cv</a>
+        </div>
+      </form>
+
+      <div id="contact-done" class="py-10 text-center outline-none" tabindex="-1" hidden>
+        <span class="mx-auto grid h-14 w-14 place-items-center rounded-full bg-accent text-ink">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+        </span>
+        <h2 class="mt-6 font-display text-3xl font-light">Bedankt voor je bericht.</h2>
+        <p class="mx-auto mt-3 max-w-md text-muted">We nemen binnen één werkdag persoonlijk contact met je op.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>site.footer()</script>
+
+<script>
+const { esc, tel, icon } = site;
+document.getElementById('people').innerHTML = TEAM.map(p => `
+  <li class="reveal flex items-center gap-5 border border-stone bg-white p-4 sm:p-5">
+    <img src="https://images.unsplash.com/${p.img}?auto=format&fit=crop&crop=faces&w=200&h=200&q=70" alt="" class="h-20 w-20 shrink-0 object-cover grayscale">
+    <div class="min-w-0">
+      <p class="font-display text-xl">${esc(p.naam)}</p>
+      <a href="${tel(p.tel)}" class="mt-2 inline-flex items-center gap-2 text-sm transition hover:text-accent-deep">${icon.phone}${esc(p.tel)}</a>
+    </div>
+  </li>`).join('');
+
+/* Kandidaat of opdrachtgever: organisatie alleen tonen (en verplichten) voor opdrachtgevers */
+const form = document.getElementById('contact-form');
+const bedrijfField = document.getElementById('bedrijf-field');
+const setRol = rol => {
+  bedrijfField.hidden = rol !== 'opdrachtgever';
+  document.getElementById('bedrijf').required = rol === 'opdrachtgever';
+};
+form.addEventListener('change', e => { if (e.target.name === 'rol') setRol(e.target.value); });
+if (new URLSearchParams(location.search).get('onderwerp') === 'opdrachtgever') {
+  form.rol.value = 'opdrachtgever';
+  setRol('opdrachtgever');
+}
+
+site.demoForm(form, document.getElementById('contact-done'));
+</script>
+</body>
+</html>

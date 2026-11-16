@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vacatures · Heupers Werving & Selectie</title>
+<meta name="description" content="Actuele vacatures in de bouw- en vastgoedsector, van projectmanager tot directeur. Bekijk het aanbod van Heupers Werving & Selectie.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="assets/site.js"></script>
+<script src="assets/data.js"></script>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="font-sans" data-page="vacatures">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:text-ink">Naar de inhoud</a>
+
+<script>site.header()</script>
+
+<main id="main">
+
+<!-- ============ PAGINAKOP ============ -->
+<section class="relative isolate overflow-hidden bg-ink text-white">
+  <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=75" alt=""
+       class="hero-img absolute inset-0 -z-20 h-full w-full object-cover">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink/95 via-ink/80 to-ink/40"></div>
+  <div class="mx-auto max-w-site px-5 pb-16 pt-36 sm:px-8 sm:pb-20 sm:pt-48">
+    <nav aria-label="Kruimelpad" class="rise eyebrow text-white/60">
+      <a href="index.html" class="hover:text-white">Home</a><span class="mx-2 text-accent">/</span><span aria-current="page" class="text-white/90">Vacatures</span>
+    </nav>
+    <h1 class="rise mt-6 max-w-3xl font-display text-[2.4rem] font-light leading-[1.08] sm:text-6xl" style="animation-delay:.1s">Jouw volgende stap in bouw en vastgoed.</h1>
+    <p class="rise mt-6 max-w-2xl text-lg leading-relaxed text-white/85" style="animation-delay:.2s">Van projectmanager tot directeur. Wij kennen de organisaties achter elke vacature en vertellen je graag meer.</p>
+  </div>
+</section>
+
+<!-- ============ OVERZICHT ============ -->
+<section class="bg-paper pb-20 sm:pb-28" aria-labelledby="overzicht-title">
+  <h2 id="overzicht-title" class="sr-only">Alle vacatures</h2>
+
+  <!-- Filterbalk -->
+  <div class="border-b border-stone bg-white">
+    <form id="filters" class="mx-auto flex max-w-site flex-col gap-4 px-5 py-5 sm:px-8 lg:flex-row lg:items-center lg:justify-between" role="search" onsubmit="return false">
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-3">
+        <div class="flex flex-wrap items-center gap-2" role="group" aria-label="Filter op sector">
+          <button type="button" class="chip" data-filter="Alle" aria-pressed="true">Alle <span data-count="Alle"></span></button>
+          <button type="button" class="chip" data-filter="Bouw" aria-pressed="false">Bouw <span data-count="Bouw"></span></button>
+          <button type="button" class="chip" data-filter="Vastgoed" aria-pressed="false">Vastgoed <span data-count="Vastgoed"></span></button>
+        </div>
+        <span class="hidden h-8 w-px bg-stone sm:block" aria-hidden="true"></span>
+        <label class="chip check-chip">
+          <input type="checkbox" id="interim"> Interim <span data-count="Interim"></span>
+        </label>
+      </div>
+      <label class="relative block lg:w-80">
+        <span class="sr-only">Zoek op functie of plaats</span>
+        <svg class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+        <input id="q" type="search" class="input !pl-11" placeholder="Zoek op functie of plaats" autocomplete="off">
+      </label>
+    </form>
+  </div>
+
+  <div class="mx-auto max-w-site px-5 pt-10 sm:px-8 sm:pt-14">
+    <p id="result-count" class="text-sm text-muted" aria-live="polite"></p>
+
+    <!-- Uitgelichte vacature -->
+    <div id="featured" class="mt-6"></div>
+
+    <!-- Alle vacatures -->
+    <div id="grid" class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+
+    <div id="empty" class="mt-6 border border-dashed border-stone bg-white px-6 py-16 text-center" hidden>
+      <p class="font-display text-2xl font-light">Geen vacatures gevonden.</p>
+      <p class="mx-auto mt-3 max-w-md text-muted">Probeer een andere zoekterm, of stuur je cv in. We denken graag met je mee over passende functies.</p>
+      <button type="button" id="reset" class="mt-6 inline-flex items-center gap-3 border border-ink px-6 py-3.5 font-display text-[13px] font-medium uppercase tracking-[.16em] transition hover:bg-ink hover:text-white">Toon alle vacatures</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPEN SOLLICITATIE ============ -->
+<section class="bg-white py-20 sm:py-24" aria-labelledby="open-title">
+  <div class="reveal mx-auto flex max-w-site flex-col gap-8 px-5 sm:px-8 lg:flex-row lg:items-center lg:justify-between">
+    <div class="max-w-2xl">
+      <p class="eyebrow text-accent-deep">Open sollicitatie</p>
+      <h2 id="open-title" class="mt-4 font-display text-4xl font-light leading-tight">Staat jouw functie er niet tussen?</h2>
+      <p class="mt-4 leading-relaxed text-muted">Veel functies vullen wij in via ons netwerk, nog voordat ze online staan. Stuur je cv in en we nemen contact op voor een eerste kennismaking.</p>
+    </div>
+    <a href="stuur-je-cv.html" class="group inline-flex shrink-0 items-center justify-center gap-3 bg-ink px-7 py-4 font-display text-[13px] font-medium uppercase tracking-[.16em] text-white transition hover:bg-ink/85">
+      Stuur je cv
+      <svg class="h-4 w-4 transition group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<script>site.footer()</script>
+
+<script>
+const { vacCard, esc, icon } = site;
+const IMG = id => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1200&q=72`;
+
+const featuredCard = v => `
+  <a href="${v.url}" class="group grid overflow-hidden border border-stone bg-white transition duration-300 hover:border-transparent hover:shadow-[0_18px_40px_-24px_rgba(31,33,35,.5)] md:grid-cols-12">
+    <div class="relative aspect-[16/10] overflow-hidden bg-stone md:col-span-5 md:aspect-auto md:min-h-[22rem]">
+      <img src="${IMG(v.img)}" alt="" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105">
+      <span class="absolute left-3 top-3 bg-accent px-2.5 py-1 font-display text-[11px] font-medium uppercase tracking-[.16em] text-ink">Uitgelicht</span>
+    </div>
+    <div class="flex flex-col gap-5 p-6 sm:p-10 md:col-span-7">
+      <p class="eyebrow text-accent-deep">${esc(v.sector)}${v.opdrachtgever ? ` <span class="mx-1.5 text-stone">/</span> ${esc(v.opdrachtgever)}` : ''}</p>
+      <h3 class="font-display text-3xl font-light leading-tight sm:text-[2.25rem]">${esc(v.titel)}</h3>
+      ${v.intro ? `<p class="max-w-xl leading-relaxed text-muted">${esc(v.intro)}</p>` : ''}
+      <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+        <li class="flex items-center gap-2.5">${icon.pin}${esc(v.locatie)}</li>
+        <li class="flex items-center gap-2.5">${icon.clock}${esc(v.uren)}${v.type ? ' · ' + esc(v.type) : ''}</li>
+        ${v.salaris ? `<li class="flex items-center gap-2.5">${icon.euro}${esc(v.salaris)} bruto p/m</li>` : ''}
+      </ul>
+      <span class="mt-auto flex items-center justify-between border-t border-stone pt-5 text-sm font-medium">
+        Bekijk vacature
+        <span class="transition group-hover:translate-x-1">${icon.arrow}</span>
+      </span>
+    </div>
+  </a>`;
+
+const qInput = document.getElementById('q');
+const chips = [...document.querySelectorAll('[data-filter]')];
+const interimBox = document.getElementById('interim');
+const params = new URLSearchParams(location.search);
+interimBox.checked = params.get('interim') === '1';
+let sector = params.get('sector');
+if (!['Bouw', 'Vastgoed'].includes(sector)) sector = 'Alle';
+
+function render() {
+  const q = qInput.value.trim().toLowerCase();
+  const interim = interimBox.checked;
+  const hits = VACATURES.filter(v => (sector === 'Alle' || v.sector === sector) && (!interim || v.interim) &&
+    (!q || `${v.titel} ${v.locatie} ${v.opdrachtgever || ''}`.toLowerCase().includes(q)));
+  const featured = hits.filter(v => v.uitgelicht);
+  const rest = hits.filter(v => !v.uitgelicht);
+
+  chips.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.filter === sector)));
+  document.getElementById('featured').innerHTML = featured.map(featuredCard).join('');
+  document.getElementById('featured').hidden = !featured.length;
+  document.getElementById('grid').innerHTML = rest.map((v, i) => vacCard(v, i, rest.length)).join('');
+  document.getElementById('empty').hidden = hits.length > 0;
+  document.getElementById('result-count').textContent = `${hits.length}${interim ? ' interim' : ''} ${hits.length === 1 ? 'vacature' : 'vacatures'}${sector !== 'Alle' ? ' in ' + sector : ''}`;
+
+  const url = new URL(location);
+  sector === 'Alle' ? url.searchParams.delete('sector') : url.searchParams.set('sector', sector);
+  interim ? url.searchParams.set('interim', '1') : url.searchParams.delete('interim');
+  history.replaceState(null, '', url);
+}
+
+chips.forEach(b => b.addEventListener('click', () => { sector = b.dataset.filter; render(); }));
+qInput.addEventListener('input', render);
+interimBox.addEventListener('change', render);
+document.getElementById('reset').addEventListener('click', () => { sector = 'Alle'; qInput.value = ''; interimBox.checked = false; render(); qInput.focus(); });
+render();
+</script>
+</body>
+</html>
