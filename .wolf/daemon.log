@@ -6,3 +6,11 @@
 [2026-11-10T13:56:04.997Z] [INFO] File watcher started on .wolf/
 [2026-11-10T13:56:04.998Z] [INFO] OpenWolf daemon started
 [2026-11-10T13:56:05.000Z] [INFO] Dashboard server listening on 127.0.0.1:18797
+[2026-11-11T11:00:00.023Z] [INFO] Executing task: Full anatomy rescan
+[2026-11-11T11:00:00.126Z] [INFO] Task Full anatomy rescan completed in 103ms
+[2026-11-13T11:00:00.051Z] [INFO] Executing task: Full anatomy rescan
+[2026-11-13T11:00:00.270Z] [INFO] Task Full anatomy rescan completed in 218ms
+[2026-11-13T17:00:00.054Z] [INFO] Executing task: Full anatomy rescan
+[2026-11-13T17:00:00.210Z] [INFO] Task Full anatomy rescan completed in 156ms
+[2026-11-16T11:00:00.033Z] [INFO] Executing task: Full anatomy rescan
+[2026-11-16T11:00:00.220Z] [INFO] Task Full anatomy rescan completed in 187ms

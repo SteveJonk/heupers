@@ -1,11 +1,11 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-11-10T13:56:05.001Z
-> Files: 161 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-11-16T11:00:00.148Z
+> Files: 163 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
-- `.DS_Store` (~2186 tok)
+- `.DS_Store` (~2732 tok)
 - `AGENTS.md` — OpenWolf (~68 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
 - `README.md` — Project documentation (~7775 tok)
@@ -104,6 +104,7 @@
 
 ## app/
 
+- `.DS_Store` (~2186 tok)
 - `.gitignore` — Git ignore rules (~147 tok)
 - `Dockerfile` — Docker container definition (~294 tok)
 - `eslint.config.mjs` — ESLint flat configuration (~124 tok)
@@ -116,6 +117,10 @@
 - `sentry.options.ts` — One source of Sentry settings for the client, the server and the edge (~291 tok)
 - `sentry.server.config.ts` — Sentry for the Node.js server runtime. Imported by `src/instrumentation.ts`, (~69 tok)
 - `tsconfig.json` — TypeScript configuration (~192 tok)
+
+## app/designs/
+
+- `index.html` — Heupers Werving & Selectie (~27336 tok)
 
 ## app/scripts/
 

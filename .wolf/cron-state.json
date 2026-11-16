@@ -1,7 +1,32 @@
 {
-  "last_heartbeat": "2026-11-10T13:56:04.997Z",
+  "last_heartbeat": "2026-11-16T12:30:05.564Z",
   "engine_status": "running",
-  "execution_log": [],
+  "execution_log": [
+    {
+      "task_id": "anatomy-rescan",
+      "status": "success",
+      "timestamp": "2026-11-11T11:00:00.126Z",
+      "duration_ms": 103
+    },
+    {
+      "task_id": "anatomy-rescan",
+      "status": "success",
+      "timestamp": "2026-11-13T11:00:00.269Z",
+      "duration_ms": 218
+    },
+    {
+      "task_id": "anatomy-rescan",
+      "status": "success",
+      "timestamp": "2026-11-13T17:00:00.210Z",
+      "duration_ms": 156
+    },
+    {
+      "task_id": "anatomy-rescan",
+      "status": "success",
+      "timestamp": "2026-11-16T11:00:00.220Z",
+      "duration_ms": 187
+    }
+  ],
   "dead_letter_queue": [],
   "upcoming": []
 }
