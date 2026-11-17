@@ -6,6 +6,12 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "8765", "--directory", "app/designs"],
       "port": 8765
+    },
+    {
+      "name": "app",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "cd app && if [ -f .env ]; then npx next dev -p 3000; else NEXT_PUBLIC_SANITY_PROJECT_ID=placeholder npx next dev -p 3000; fi"],
+      "port": 3000
     }
   ]
 }

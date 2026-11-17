@@ -3,18 +3,18 @@
   "created_at": "2026-11-10T13:56:04.179Z",
   "lifetime": {
     "total_tokens_estimated": 0,
-    "total_reads": 17,
+    "total_reads": 22,
     "total_writes": 0,
-    "total_sessions": 1,
+    "total_sessions": 2,
     "anatomy_hits": 0,
-    "anatomy_misses": 17,
+    "anatomy_misses": 22,
     "repeated_reads_blocked": 0,
     "estimated_savings_vs_bare_cli": 0,
-    "real_input_tokens": 992,
-    "real_output_tokens": 467562,
-    "real_cache_read_tokens": 83987118,
-    "real_cache_creation_tokens": 1448438,
-    "real_api_calls": 460
+    "real_input_tokens": 1200,
+    "real_output_tokens": 603285,
+    "real_cache_read_tokens": 109202233,
+    "real_cache_creation_tokens": 1899556,
+    "real_api_calls": 561
   },
   "sessions": [
     {
@@ -333,6 +333,84 @@
         "cache_read_input_tokens": 23969863,
         "cache_creation_input_tokens": 294993,
         "api_calls": 107
+      }
+    },
+    {
+      "id": "session-2026-11-17-1150",
+      "agent": "claude",
+      "started": "2026-11-17T10:50:10.015Z",
+      "ended": "2026-11-17T10:56:25.481Z",
+      "reads": [
+        {
+          "file": "/Users/stevejonk/.claude/projects/-Users-stevejonk-Documents-Prive-Projecten-heupers/5115875b-8b5d-4b34-9ec6-8450cc210dce/tool-results/b62cu58a7.txt",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [],
+      "totals": {
+        "input_tokens_estimated": 0,
+        "output_tokens_estimated": 0,
+        "reads_count": 1,
+        "writes_count": 0,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 0
+      },
+      "real_usage": {
+        "input_tokens": 24,
+        "output_tokens": 7602,
+        "cache_read_input_tokens": 1496194,
+        "cache_creation_input_tokens": 110672,
+        "api_calls": 12
+      }
+    },
+    {
+      "id": "session-2026-11-17-1150",
+      "agent": "claude",
+      "started": "2026-11-17T10:50:10.015Z",
+      "ended": "2026-11-17T11:17:46.074Z",
+      "reads": [
+        {
+          "file": "/Users/stevejonk/.claude/projects/-Users-stevejonk-Documents-Prive-Projecten-heupers/5115875b-8b5d-4b34-9ec6-8450cc210dce/tool-results/b62cu58a7.txt",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/stevejonk/.claude/projects/-Users-stevejonk-Documents-Prive-Projecten-heupers/5115875b-8b5d-4b34-9ec6-8450cc210dce/tool-results/bwrrcma93.txt",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/private/tmp/claude-501/-Users-stevejonk--claude-spares-spare-nA5iqj/5115875b-8b5d-4b34-9ec6-8450cc210dce/scratchpad/app-home.png",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/private/tmp/claude-501/-Users-stevejonk--claude-spares-spare-nA5iqj/5115875b-8b5d-4b34-9ec6-8450cc210dce/scratchpad/design-home.png",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [],
+      "totals": {
+        "input_tokens_estimated": 0,
+        "output_tokens_estimated": 0,
+        "reads_count": 4,
+        "writes_count": 0,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 0
+      },
+      "real_usage": {
+        "input_tokens": 184,
+        "output_tokens": 128121,
+        "cache_read_input_tokens": 23718921,
+        "cache_creation_input_tokens": 340446,
+        "api_calls": 89
       }
     }
   ],

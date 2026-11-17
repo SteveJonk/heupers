@@ -47,6 +47,68 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-11-16T14:35:00"
+    },
+    {
+      "id": "bug-004",
+      "timestamp": "2026-11-17T12:20:00Z",
+      "error_message": "Headings 24px taller than prototype (line-height 60px vs 48px)",
+      "file": "app/src (headings in pages/sections)",
+      "root_cause": "Tailwind v4 lets leading-* override responsive text-* line-height; v3 (prototype) did the opposite",
+      "fix": "Added sm:leading-none / sm:leading-10 / lg:leading-8 next to responsive text sizes",
+      "tags": [
+        "tailwind-v4",
+        "line-height",
+        "parity"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-17T12:20:00Z"
+    },
+    {
+      "id": "bug-005",
+      "timestamp": "2026-11-17T12:20:00Z",
+      "error_message": "Mobile apply bar stayed visible with mobile menu open",
+      "file": "app/src/app/globals.css",
+      "root_cause": ".hide-on-menu rule in @layer components lost to the bar's flex utility",
+      "fix": "Moved the rule out of the layer (unlayered beats utilities)",
+      "tags": [
+        "css-layers",
+        "tailwind-v4",
+        "mobile-menu"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-17T12:20:00Z"
+    },
+    {
+      "id": "bug-006",
+      "timestamp": "2026-11-17T12:20:00Z",
+      "error_message": "globals.css base layer emptied during edit",
+      "file": "app/src/app/globals.css",
+      "root_cause": "zsh fed the second heredoc to cat, python read empty stdin",
+      "fix": "Re-appended CSS with cat >> heredoc",
+      "tags": [
+        "zsh",
+        "heredoc",
+        "tooling"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-17T12:20:00Z"
+    },
+    {
+      "id": "bug-007",
+      "timestamp": "2026-11-17T12:20:00Z",
+      "error_message": "Unused eslint-disable directive warning in TrackingScripts",
+      "file": "app/src/components/TrackingScripts.tsx",
+      "root_cause": "no-img-element rule turned off project-wide",
+      "fix": "Removed the now-unused directive",
+      "tags": [
+        "eslint"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-17T12:20:00Z"
     }
   ]
 }

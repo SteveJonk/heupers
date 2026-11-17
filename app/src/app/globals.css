@@ -22,8 +22,9 @@
 
 @theme {
   /* --- Palette -----------------------------------------------------------
-     Ships as neutral Tailwind slate so a fresh project looks like plain
-     Tailwind rather than someone else's brand. Swap these twelve values.
+     The template tokens below are only used by the older page-builder blocks
+     (src/components/blocks); the Heupers pages use the Signaaloranje tokens
+     further down. `accent` and `muted` are shared, with Heupers values.
 
      surface / surface-alt : page and panel backgrounds
      fg / muted / subtle   : text, in descending emphasis
@@ -35,14 +36,11 @@
   --color-surface-alt: #f8fafc;
 
   --color-fg: #0f172a;
-  --color-muted: #475569;
   --color-subtle: #94a3b8;
 
   --color-inverse: #0f172a;
   --color-inverse-fg: #f8fafc;
 
-  --color-accent: #e2e8f0;
-  --color-accent-deep: #cbd5e1;
   --color-accent-strong: #0284c7;
 
   --color-brand: #0f172a;
@@ -50,18 +48,31 @@
   --color-brand-deep: #334155;
   --color-brand-fg: #f8fafc;
 
+  /* Heupers — kleurschema Signaaloranje. Alle combinaties WCAG AA (>= 4.5:1).
+     ink: tekst en donkere vlakken · paper: lichte sectie-achtergrond ·
+     stone: lijnen en randen · muted: secundaire tekst ·
+     accent: accentvlak, altijd met ink-tekst · accent-soft: hover, labels op
+     donker · accent-deep: accent als tekst op licht */
+  --color-ink: rgb(31 33 35);
+  --color-paper: rgb(242 242 240);
+  --color-stone: rgb(220 219 214);
+  --color-muted: rgb(88 90 92);
+  --color-accent: rgb(232 105 42);
+  --color-accent-soft: rgb(240 138 82);
+  --color-accent-deep: rgb(178 72 26);
+
   /* The one colour that must read as "something went wrong" — form errors. */
   --color-danger: #b91c1c;
 
   /* --- Typography --------------------------------------------------------
-     `--font-display` is used by h1/h2/h3 (see the base layer below).
-     `--font-sans` is everything else. Both fall back to system fonts if the
+     `--font-display` (Jost) for headings and labels via `font-display`,
+     `--font-sans` (Inter) for everything else. Both fall back to system fonts if the
      next/font variable is missing, so the site still renders during setup.
      ---------------------------------------------------------------------- */
-  --font-display: var(--font-display-src), Georgia, "Times New Roman", serif;
+  --font-display:
+    var(--font-display-src), Futura, "Avenir Next", system-ui, sans-serif;
   --font-sans:
-    var(--font-sans-src), -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+    var(--font-sans-src), system-ui, -apple-system, "Segoe UI", sans-serif;
 
   /* Named sizes for the recurring bits of UI, so a heading scale change does
      not mean hunting through components for magic rem values. */
@@ -94,15 +105,11 @@
   --spacing-section: 130px;
   --spacing-section-sm: 82px;
 
-  --container-site: 1280px;
+  --container-site: 76rem;
 
-  /* Breakpoints deliberately differ from the Tailwind defaults — the layouts
-     in src/components are built against these. Change with care. */
+  /* Tailwind's default sm/md/lg/xl, as in the approved design prototype.
+     `xs` is only used by the older template blocks. */
   --breakpoint-xs: 400px;
-  --breakpoint-sm: 760px;
-  --breakpoint-md: 960px;
-  --breakpoint-lg: 1120px;
-  --breakpoint-xl: 1360px;
 
   /* --- Shape and motion -------------------------------------------------- */
   --radius-pill: 100px;
@@ -166,27 +173,392 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
     -webkit-text-size-adjust: 100%;
   }
 
   body {
-    @apply overflow-x-hidden bg-surface font-sans text-fg antialiased;
+    @apply overflow-x-hidden bg-white font-sans text-ink antialiased;
     font-size: 16px;
   }
 
   h1,
   h2,
   h3 {
-    @apply font-display font-normal leading-[1.02] tracking-[-0.02em];
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  blockquote {
+    text-wrap: pretty;
+  }
+
+  /* Tailwind v4 resets buttons to the default cursor; the design expects a pointer. */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
   }
 
   ::selection {
-    @apply bg-accent text-fg;
+    @apply bg-accent-soft text-ink;
+  }
+}
+
+/* ==========================================================================
+   Heupers — gedeelde componentstijlen uit het designprototype
+   (app/designs/assets/site.css). In een layer, zodat utilities winnen.
+   ========================================================================== */
+@layer components {
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .hero-img {
+    animation: hero-zoom 14s ease-out both;
+  }
+
+  .rise {
+    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  /* Scroll-reveal: alleen verborgen als JS draait (class `js` op <html>). */
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+    &.in {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .track {
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  /* Filterchips */
+  .chip {
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    padding: 0.7rem 1.1rem;
+    border: 1px solid var(--color-stone);
+    background: #fff;
+    transition:
+      background-color 0.2s,
+      color 0.2s,
+      border-color 0.2s;
+    min-height: 44px;
+
+    & span {
+      color: var(--color-muted);
+      margin-left: 0.2rem;
+    }
+
+    &:hover {
+      border-color: var(--color-ink);
+    }
+
+    &[aria-pressed="true"] {
+      background: var(--color-ink);
+      color: #fff;
+      border-color: var(--color-ink);
+
+      & span {
+        color: rgb(255 255 255 / 0.7);
+      }
+    }
+  }
+
+  /* Chip met vinkje (Interim-filter): zelfde vorm, eigen aan/uit-status */
+  .check-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    user-select: none;
+
+    & input {
+      width: 1.05rem;
+      height: 1.05rem;
+      margin: 0;
+      accent-color: var(--color-accent);
+      cursor: pointer;
+    }
+
+    &:has(input:checked) {
+      background: var(--color-ink);
+      color: #fff;
+      border-color: var(--color-ink);
+
+      & span {
+        color: rgb(255 255 255 / 0.7);
+      }
+    }
+
+    &:has(input:focus-visible) {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+  }
+
+  /* Lopende tekst (vacature, over ons): koppen, alinea's, lijsten met oranje streepje */
+  .content {
+    & > * + * {
+      margin-top: 1.1rem;
+    }
+
+    & h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.75rem;
+      line-height: 1.2;
+      margin-top: 3rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    & p,
+    & li {
+      color: var(--color-muted);
+      line-height: 1.75;
+      font-size: 1.0625rem;
+    }
+
+    & strong {
+      color: var(--color-ink);
+      font-weight: 500;
+    }
+
+    & ul {
+      display: grid;
+      gap: 0.6rem;
+
+      & li {
+        position: relative;
+        padding-left: 1.6rem;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0.85em;
+          width: 0.8rem;
+          height: 2px;
+          background: var(--color-accent);
+        }
+      }
+    }
+  }
+
+  /* Formulieren */
+  .field {
+    display: grid;
+    gap: 0.5rem;
+
+    & > label,
+    & > .label {
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    & .hint {
+      font-weight: 400;
+      color: var(--color-muted);
+    }
+  }
+
+  .input {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--color-stone);
+    background: #fff;
+    color: var(--color-ink);
+    font-size: 1rem;
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
+    border-radius: 0;
+
+    &::placeholder {
+      color: var(--color-muted);
+      opacity: 1;
+    }
+
+    &:hover {
+      border-color: rgb(88 90 92 / 0.6);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-ink);
+      box-shadow: 0 0 0 1px var(--color-ink);
+    }
+
+    &:user-invalid {
+      border-color: #b42318;
+    }
+  }
+
+  textarea.input {
+    min-height: 9rem;
+    resize: vertical;
+  }
+
+  select.input {
+    appearance: none;
+    padding-right: 2.75rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231F2123' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+  }
+
+  .check {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    line-height: 1.55;
+
+    & input {
+      width: 1.2rem;
+      height: 1.2rem;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+      accent-color: var(--color-ink);
+    }
+  }
+
+  /* Segmented control (kandidaat / opdrachtgever) */
+  .seg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--color-stone);
+
+    & label {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 3.25rem;
+      font-family: var(--font-display);
+      cursor: pointer;
+      transition:
+        background-color 0.2s,
+        color 0.2s;
+
+      &:has(input:checked) {
+        background: var(--color-ink);
+        color: #fff;
+      }
+
+      &:has(input:focus-visible) {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+      }
+    }
+
+    & input {
+      position: absolute;
+      opacity: 0;
+      inset: 0;
+      cursor: pointer;
+    }
+  }
+
+  /* Cv-upload */
+  .drop {
+    position: relative;
+    border: 1px dashed rgb(88 90 92 / 0.6);
+    background: var(--color-paper);
+    transition:
+      border-color 0.2s,
+      background-color 0.2s;
+
+    &:hover,
+    &[data-over="true"] {
+      border-color: var(--color-ink);
+      background: #fff;
+    }
+
+    & input {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    &:has(input:focus-visible) {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+  }
+}
+
+/* Vaste balken (mobiele sollicitatieknop) verbergen zolang het mobiele menu open is.
+   Bewust buiten de layers: moet de `flex`-utility van de balk overrulen. */
+body:has(#menu-btn[aria-expanded="true"]) .hide-on-menu {
+  display: none;
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.08);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
   }
 }

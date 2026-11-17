@@ -1,17 +1,19 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-11-16T11:00:00.148Z
-> Files: 163 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-11-17T11:17:19.631Z
+> Files: 207 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
 - `.DS_Store` (~2732 tok)
+- `.gitignore` — Git ignore rules (~3 tok)
 - `AGENTS.md` — OpenWolf (~68 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
 - `README.md` — Project documentation (~7775 tok)
 
 ## .claude/
 
+- `launch.json` (~135 tok)
 - `settings.json` (~514 tok)
 
 ## .claude/commands/
@@ -31,6 +33,11 @@
 
 - `build-app-image.yml` — CI: Build App Image (~887 tok)
 - `deploy-sanity-studio.yml` — CI: Deploy Sanity Studio (~802 tok)
+
+## .impeccable/
+
+- `config.json` (~1036 tok)
+- `hook.cache.json` (~381 tok)
 
 ## .opencode/command/
 
@@ -107,8 +114,9 @@
 - `.DS_Store` (~2186 tok)
 - `.gitignore` — Git ignore rules (~147 tok)
 - `Dockerfile` — Docker container definition (~294 tok)
-- `eslint.config.mjs` — ESLint flat configuration (~124 tok)
+- `eslint.config.mjs` — ESLint flat configuration (~162 tok)
 - `netlify.toml` (~228 tok)
+- `next-env.d.ts` — / <reference types="next" /> (~72 tok)
 - `next.config.ts` — Next.js configuration (~472 tok)
 - `package-lock.json` — npm lock file (~212514 tok)
 - `package.json` — Node.js package manifest (~389 tok)
@@ -117,10 +125,29 @@
 - `sentry.options.ts` — One source of Sentry settings for the client, the server and the edge (~291 tok)
 - `sentry.server.config.ts` — Sentry for the Node.js server runtime. Imported by `src/instrumentation.ts`, (~69 tok)
 - `tsconfig.json` — TypeScript configuration (~192 tok)
+- `tsconfig.tsbuildinfo` (~88667 tok)
+
+## app/.impeccable/
+
+- `hook.cache.json` (~1231 tok)
 
 ## app/designs/
 
-- `index.html` — Heupers Werving & Selectie (~27336 tok)
+- `contact.html` — Contact · Heupers Werving & Selectie (~2343 tok)
+- `index.html` — Heupers Werving & Selectie (~6839 tok)
+- `opdrachtgevers.html` — Voor opdrachtgevers · Heupers Werving & Selectie (~3757 tok)
+- `over-ons.html` — Over Heupers · Heupers Werving & Selectie (~2472 tok)
+- `stuur-je-cv.html` — Stuur je cv · Heupers Werving & Selectie (~2888 tok)
+- `vacature.html` — Senior Projectmanager Bedrijfsmatig Vastgoed · Heupers Werving & Selectie (~3947 tok)
+- `vacatures.html` — Vacatures · Heupers Werving & Selectie (~2672 tok)
+- `werkwijze.html` — Onze werkwijze · Heupers Werving & Selectie (~2761 tok)
+
+## app/designs/assets/
+
+- `data.js` — Declares VACATURES (~1543 tok)
+- `site.css` — Styles: 7 vars, 1 media queries, 2 animations (~2225 tok)
+- `site.js` — site: header (~8264 tok)
+  - fn `site` L32-365 (~7820 tok)
 
 ## app/scripts/
 
@@ -176,14 +203,13 @@
 ## app/src/app/
 
 - `global-error.tsx` — Last-resort error boundary: it replaces the root layout, so it renders its (~239 tok)
-- `globals.css` — Styles: 4 rules, 54 vars, 1 media queries, 3 animations, 1 layers (~1694 tok)
-- `layout.tsx` — Site-wide metadata defaults, from the `siteInformation` singleton. (~1264 tok)
-  - fn `generateMetadata` L47-78 (~193 tok)
-  - fn `asNavLinks` L79-84 (~58 tok)
-  - fn `RootLayout` L85-137 (~475 tok)
+- `globals.css` — Styles: 4 rules, 54 vars, 3 animations, 2 layers (~3861 tok)
+- `layout.tsx` — display (~696 tok)
+  - fn `RootLayout` L45-79 (~288 tok)
 - `manifest.json` (~46 tok)
 - `not-found.tsx` — NotFound (~246 tok)
-- `page.tsx` — options (~397 tok)
+- `page.tsx` — PILLARS (~4930 tok)
+  - fn `HomePage` L24-306 (~4508 tok)
 - `robots.ts` — Served at `/robots.txt`. (~150 tok)
 - `sitemap.ts` — Every CMS page, listed from the CMS itself. (~321 tok)
 
@@ -223,9 +249,44 @@
   - fn `OPTIONS` L35-38 (~28 tok)
   - fn `POST` L39-91 (~644 tok)
 
+## app/src/app/contact/
+
+- `page.tsx` — metadata (~1072 tok)
+  - fn `ContactPage` L12-84 (~924 tok)
+
+## app/src/app/opdrachtgevers/
+
+- `page.tsx` — metadata (~2847 tok)
+  - fn `OpdrachtgeversPage` L47-190 (~2351 tok)
+
+## app/src/app/over-ons/
+
+- `page.tsx` — metadata (~2479 tok)
+  - fn `OverOnsPage` L16-153 (~2304 tok)
+
 ## app/src/app/sentry-test/
 
 - `page.tsx` — Served at `/sentry-test?secret=<SENTRY_TEST_SECRET>`: checks the Sentry connection (~380 tok)
+
+## app/src/app/stuur-je-cv/
+
+- `page.tsx` — metadata (~969 tok)
+  - fn `StuurJeCvPage` L18-75 (~718 tok)
+
+## app/src/app/vacatures/
+
+- `page.tsx` — metadata (~700 tok)
+  - fn `VacaturesPage` L15-56 (~529 tok)
+
+## app/src/app/vacatures/senior-projectmanager-bedrijfsmatig-vastgoed/
+
+- `page.tsx` — TITLE (~3608 tok)
+  - fn `VacaturePage` L33-221 (~3217 tok)
+
+## app/src/app/werkwijze/
+
+- `page.tsx` — metadata (~2086 tok)
+  - fn `WerkwijzePage` L65-148 (~1224 tok)
 
 ## app/src/components/
 
@@ -234,11 +295,13 @@
   - fn `toCta` L27-45 (~229 tok)
   - fn `renderBlock` L46-313 (~2622 tok)
   - fn `PageBuilder` L314-326 (~92 tok)
+- `ScrollEffects.tsx` — The design's scroll-reveal (`.reveal` -> `.in`) and count-up (`data-countup`), (~542 tok)
+  - fn `ScrollEffects` L11-58 (~453 tok)
 - `SentryTest.tsx` — Buttons that raise a deliberate error in the browser and on the server, so (~686 tok)
   - fn `SentryTest` L14-70 (~556 tok)
-- `TrackingScripts.tsx` — Google Tag Manager and the Meta (Facebook) pixel, both opt-in. (~866 tok)
+- `TrackingScripts.tsx` — Google Tag Manager and the Meta (Facebook) pixel, both opt-in. (~846 tok)
   - fn `TrackingScriptsHead` L21-62 (~399 tok)
-  - fn `TrackingScriptsBody` L63-92 (~222 tok)
+  - fn `TrackingScriptsBody` L63-91 (~202 tok)
 
 ## app/src/components/blocks/
 
@@ -274,6 +337,10 @@
 - `Captcha.tsx` — Public half of the spam-check settings — the secret stays server-side. (~1344 tok)
   - fn `loadScript` L38-64 (~309 tok)
   - fn `Captcha` L65-142 (~644 tok)
+- `ContactMessageForm.tsx` — ContactMessageForm — renders form — uses useState, useEffect (~1243 tok)
+  - fn `ContactMessageForm` L13-107 (~1122 tok)
+- `CvForm.tsx` — MAX_CV_BYTES — renders form — uses useState, useEffect (~1956 tok)
+  - fn `CvForm` L14-156 (~1818 tok)
 - `fields.tsx` — `stacked` is the roomy page form, `compact` fits a narrow card or sidebar. (~1728 tok)
   - fn `selectCaret` L41-51 (~128 tok)
   - fn `linkify` L52-73 (~153 tok)
@@ -282,9 +349,15 @@
   - fn `IconArrowRight` L67-74 (~66 tok)
   - fn `SuccessPanel` L75-118 (~459 tok)
   - fn `FormRenderer` L119-340 (~2291 tok)
+- `FormSuccess.tsx` — Thank-you block that replaces a demo form; takes focus when it appears. (~206 tok)
 
 ## app/src/components/layout/
 
+- `Footer.tsx` — COLUMNS (~1309 tok)
+  - fn `Footer` L29-116 (~1064 tok)
+- `Header.tsx` — Only the vacature dropdown items have a query, so a plain path compare is enough. (~2804 tok)
+  - fn `isCurrentItem` L45-48 (~31 tok)
+  - fn `Header` L49-252 (~2226 tok)
 - `SiteFooter.tsx` — From `getSiteInformation()`; the defaults stand in when not passed. (~1223 tok)
   - fn `FooterLinkList` L14-37 (~204 tok)
   - fn `SiteFooter` L38-127 (~932 tok)
@@ -294,24 +367,64 @@
   - fn `Burger` L58-110 (~342 tok)
   - fn `SiteHeader` L111-175 (~681 tok)
 
+## app/src/components/sections/
+
+- `PageHeader.tsx` — Unsplash photo id behind the dark overlay. (~665 tok)
+  - fn `PageHeader` L24-65 (~460 tok)
+- `ReferentiesSection.tsx` — "Wat opdrachtgevers over ons zeggen" — reviews carousel (home, opdrachtgevers). (~459 tok)
+- `VacatureCarousel.tsx` — Homepage: sector chips + the vacature carousel they filter. (~464 tok)
+- `VacatureOverview.tsx` — Sector and interim live in the URL (`?sector=Bouw&interim=1`), so menu and footer links can deep-link a filter. (~2274 tok)
+  - fn `FeaturedCard` L15-69 (~682 tok)
+  - fn `VacatureOverviewFromUrl` L70-74 (~54 tok)
+  - fn `VacatureOverview` L75-181 (~1379 tok)
+
 ## app/src/components/ui/
 
+- `ApplyBar.tsx` — Mobile-only bar pinned to the bottom; slides away once the footer is in view. (~283 tok)
 - `ArrowLink.tsx` — Standalone text link with circular arrow (renders as `<a>`). (~546 tok)
   - fn `ArrowLink` L34-57 (~154 tok)
   - fn `ArrowLinkLabel` L58-73 (~93 tok)
 - `Button.tsx` — Class string for anything that should look like a button (e.g. a `<button>`). (~520 tok)
   - fn `buttonClass` L34-41 (~60 tok)
   - fn `Button` L42-68 (~126 tok)
+- `Carousel.tsx` — Autoplay step in ms. (~1587 tok)
+  - fn `Carousel` L22-154 (~1389 tok)
 - `ContactIcon.tsx` — Phone / WhatsApp / mail / map-pin, for the contact panel beside a form. (~570 tok)
   - fn `ContactIcon` L9-60 (~507 tok)
 - `Eyebrow.tsx` — Accent tone for dark backgrounds where plain white reads too cold. (~192 tok)
+- `HeupersLogo.tsx` — The Heupers Werving & Selectie wordmark, inlined so it takes `currentColor`. (~1814 tok)
+  - fn `HeupersLogo` L10-22 (~112 tok)
 - `IconArrow.tsx` — IconArrow (~203 tok)
+- `icons.tsx` — The arrow that nudges right when its `group` parent is hovered. (~1090 tok)
+  - fn `Outline` L6-13 (~86 tok)
+  - fn `ArrowIcon` L14-17 (~44 tok)
+  - fn `ArrowLeftIcon` L18-22 (~66 tok)
+  - fn `HoverArrow` L23-26 (~45 tok)
+  - fn `PinIcon` L27-35 (~74 tok)
+  - fn `ClockIcon` L36-44 (~63 tok)
+  - fn `EuroIcon` L45-48 (~54 tok)
+  - fn `PhoneIcon` L49-52 (~67 tok)
+  - fn `MailIcon` L53-61 (~68 tok)
+  - fn `ChevronIcon` L62-65 (~48 tok)
+  - fn `CheckIcon` L66-69 (~49 tok)
+  - fn `QuoteIcon` L70-77 (~96 tok)
+  - fn `LinkedInIcon` L78-85 (~109 tok)
+  - fn `MenuIcon` L86-89 (~45 tok)
+  - fn `PlayIcon` L90-97 (~63 tok)
+  - fn `PauseIcon` L98-106 (~82 tok)
 - `Image.tsx` — next/image, but Sanity images are resized by the Sanity CDN (see (~196 tok)
 - `Lead.tsx` — Lead (~91 tok)
 - `LogoMark.tsx` — From `siteInformation`; falls back to the default when not passed. (~478 tok)
+- `PersonCard.tsx` — PersonCard (~370 tok)
+- `ReferentieCard.tsx` — Capitalised words only, so "Erik de Groot" becomes "EG". (~540 tok)
+  - fn `toInitials` L11-19 (~53 tok)
+  - fn `ReferentieCard` L20-49 (~413 tok)
 - `Reveal.tsx` — delayClass (~252 tok)
 - `RevealLink.tsx` — delayClass (~277 tok)
 - `SectionHead.tsx` — SectionHead (~160 tok)
+- `ShareButton.tsx` — Native share sheet, or copy the link where there is none. (~323 tok)
+- `VacatureCard.tsx` — Width classes when the card sits in a carousel track. (~744 tok)
+  - fn `VacatureCard` L14-67 (~628 tok)
 - `Wrap.tsx` — Site content width shell. (~119 tok)
 
 ## app/src/hooks/
@@ -326,6 +439,9 @@
 - `captcha.ts` — Server half of the form spam check. No Next.js in here, so the verdicts can (~498 tok)
 - `chrome.ts` — Scroll threshold (px) before the topbar gets the stuck state. (~62 tok)
 - `cn.ts` — Exports cn (~37 tok)
+- `content.ts` — Heupers content, hardcoded from the approved prototype (app/designs/assets/data.js). (~1985 tok)
+  - fn `toTelHref` L95-99 (~54 tok)
+  - fn `toUnsplashUrl` L100-108 (~84 tok)
 - `demo-content.ts` — Demo copy for every block. (~3960 tok)
 - `env.ts` — Sanity connection details and analytics ids, read from the environment. (~380 tok)
 - `form-fields.ts` — Shape and layout rules for CMS-authored forms. No React in here, so the (~1976 tok)
@@ -373,6 +489,7 @@
   - fn `withDefaults` L123-135 (~116 tok)
   - fn `telHref` L136-139 (~29 tok)
   - fn `mailtoHref` L140-150 (~63 tok)
+- `styles.ts` — The uppercase display label used on every button and text link in the design. (~50 tok)
 
 ## app/src/sanity/
 
